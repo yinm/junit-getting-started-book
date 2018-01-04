@@ -1,6 +1,7 @@
 package ch03;
 
 import org.junit.Test;
+import org.junit.Before;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -13,6 +14,14 @@ public class CalculatorTest {
 		int actual = sut.add(3, 4);
 		assertThat(actual, is(7));
 		sut.shutdown();
+	}
+
+	Calculator sut;
+
+	@Before
+	public void setUp() throws Exception {
+		sut = new Calculator();
+		sut.init();
 	}
 
 }
