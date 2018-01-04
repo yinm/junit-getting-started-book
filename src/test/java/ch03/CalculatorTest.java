@@ -2,6 +2,7 @@ package ch03;
 
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.Ignore;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -24,4 +25,10 @@ public class CalculatorTest {
 		sut.init();
 	}
 
+	@Ignore("未実装")
+	@Test
+	public void divide4と2を与えると2を返す() throws Exception {
+		int actual = sut.divide(3, 4);
+		assertThat(actual, is(7));
+	}
 }
