@@ -1,6 +1,7 @@
 package ch03;
 
 import org.junit.Test;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 
@@ -23,6 +24,11 @@ public class CalculatorTest {
 	public void setUp() throws Exception {
 		sut = new Calculator();
 		sut.init();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		sut.shutdown();
 	}
 
 	@Ignore("未実装")
