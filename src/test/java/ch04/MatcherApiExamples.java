@@ -17,4 +17,10 @@ public class MatcherApiExamples {
 		String expected = "Hello World";
 		assertThat(actual, is(expected));
 	}
+
+	@Test
+	public void CoreMatchers_nullValue() throws Exception {
+		String actual = null;
+		assertThat(actual, is(nullValue()));
+	}
 }
