@@ -36,4 +36,22 @@ public class MatcherApiExamples {
 		assertThat(actual, is(notNullValue()));
 		assertThat(actual, is(not(nullValue())));
 	}
+
+	@Test
+	public void CoreMatchers_sameInstance() throws Exception {
+		Foo actual = new Foo();
+		Foo expected = actual;
+		assertThat(actual, is(sameInstance(expected)));
+	}
+
+	@SuppressWarnings("serial")
+	static class Foo implements Serializable {
+		List<String> getList() {
+			List<String> list = new ArrayList<String>();
+			list.add("Hello");
+			list.add("JUnit");
+			list.add("World");
+			return list;
+		}
+	}
 }
