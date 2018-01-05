@@ -29,4 +29,11 @@ public class MatcherApiExamples {
 		int actual = 100;
 		assertThat(actual, is(not(0)));
 	}
+
+	@Test
+	public void CoreMatchers_notNullValue() throws Exception {
+		String actual = "Hello";
+		assertThat(actual, is(notNullValue()));
+		assertThat(actual, is(not(nullValue())));
+	}
 }
