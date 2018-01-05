@@ -44,6 +44,12 @@ public class MatcherApiExamples {
 		assertThat(actual, is(sameInstance(expected)));
 	}
 
+	@Test
+	public void CoreMatchers_instanceOf() throws Exception {
+		Foo actual = new Foo();
+		assertThat(actual, is(instanceOf(Serializable.class)));
+	}
+
 	@SuppressWarnings("serial")
 	static class Foo implements Serializable {
 		List<String> getList() {
