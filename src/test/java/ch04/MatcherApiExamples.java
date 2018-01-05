@@ -23,4 +23,10 @@ public class MatcherApiExamples {
 		String actual = null;
 		assertThat(actual, is(nullValue()));
 	}
+
+	@Test
+	public void CoreMatchers_not() throws Exception {
+		int actual = 100;
+		assertThat(actual, is(not(0)));
+	}
 }
