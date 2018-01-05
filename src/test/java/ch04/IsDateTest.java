@@ -15,4 +15,9 @@ public class IsDateTest {
 		Date date = new Date();
 		assertThat(date, is(dateOf(2018, 1, 5)));
 	}
+
+	@Test
+	public void nullとの比較() throws Exception {
+		assertThat(null, is(dateOf(2011, 2, 10)));
+	}
 }
