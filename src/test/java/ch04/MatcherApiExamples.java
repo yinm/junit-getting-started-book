@@ -2,7 +2,6 @@ package ch04;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
-import static org.junit.matchers.JUnitMatchers.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -48,6 +47,13 @@ public class MatcherApiExamples {
 	public void CoreMatchers_instanceOf() throws Exception {
 		Foo actual = new Foo();
 		assertThat(actual, is(instanceOf(Serializable.class)));
+	}
+
+	@Test
+	public void CoreMatchers_hasItem() throws Exception {
+		Foo sut = new Foo();
+		List<String> actual = sut.getList();
+		assertThat(actual, is(hasItem("World")));
 	}
 
 	@SuppressWarnings("serial")
