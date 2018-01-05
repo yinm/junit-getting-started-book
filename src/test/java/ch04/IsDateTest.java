@@ -13,6 +13,6 @@ public class IsDateTest {
 	@Test
 	public void 日付の比較() throws Exception {
 		Date date = new Date();
-		assertThat(date, is(dateOf(2011, 2, 10)));
+		assertThat(date, is(dateOf(2018, 1, 5)));
 	}
 }
