@@ -56,6 +56,13 @@ public class MatcherApiExamples {
 		assertThat(actual, is(hasItem("World")));
 	}
 
+	@Test
+	public void CoreMatchers_hasItems() throws Exception {
+		Foo sut = new Foo();
+		List<String> actual = sut.getList();
+		assertThat(actual, is(hasItems("Hello", "World")));
+	}
+
 	@SuppressWarnings("serial")
 	static class Foo implements Serializable {
 		List<String> getList() {
