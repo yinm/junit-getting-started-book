@@ -9,6 +9,15 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
 public class IsDate extends BaseMatcher<Date> {
+	private final int yyyy;
+	private final int mm;
+	private final int dd;
+
+	IsDate(int yyyy, int mm, int dd) {
+		this.yyyy = yyyy;
+		this.mm = mm;
+		this.dd = dd;
+	}
 
 	@Override
 	public boolean matches(Object actual) {
@@ -20,6 +29,6 @@ public class IsDate extends BaseMatcher<Date> {
 	}
 
 	public static Matcher<Date> dateOf(int yyyy, int mm, int dd) {
-		return new IsDate();
+		return new IsDate(yyyy, mm, dd);
 	}
 }
