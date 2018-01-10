@@ -12,4 +12,10 @@ public class AssumeTest {
 		assumeThat(1, is(0));
 		fail("この行は実行されない");
 	}
+
+	@Test
+	public void assume2() throws Exception {
+		assumeThat(1, is(1));
+		assertThat(1, is(1));
+	}
 }
