@@ -23,4 +23,13 @@ public class MockitoExamples {
 		when(stub.get(0)).thenReturn("Hello");
 		assertThat(stub.get(0), is("Hello"));
 	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void 例外を送出するスタブメソッド() throws Exception {
+		List<String> stub = mock(List.class);
+		when(stub.get(0)).thenReturn("Hello");
+		when(stub.get(1)).thenReturn("World");
+		when(stub.get(2)).thenThrow(new IndexOutOfBoundsException());
+		stub.get(2);
+	}
 }
