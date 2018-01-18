@@ -39,4 +39,13 @@ public class MockitoExamples {
 		doThrow(new RuntimeException()).when(stub).clear();
 		stub.clear();
 	}
+
+	@Test
+	public void 任意の整数に対するスタブメソッド() throws Exception {
+		List<String> stub = mock(List.class);
+		when(stub.get(anyInt())).thenReturn("Hello");
+		assertThat(stub.get(0), is("Hello"));
+		assertThat(stub.get(1), is("Hello"));
+		assertThat(stub.get(999), is("Hello"));
+	}
 }
