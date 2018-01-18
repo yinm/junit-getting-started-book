@@ -32,4 +32,11 @@ public class MockitoExamples {
 		when(stub.get(2)).thenThrow(new IndexOutOfBoundsException());
 		stub.get(2);
 	}
+
+	@Test(expected = RuntimeException.class)
+	public void 戻り値がvoid型のメソッド() throws Exception {
+		List<String> stub = mock(List.class);
+		doThrow(new RuntimeException()).when(stub).clear();
+		stub.clear();
+	}
 }
