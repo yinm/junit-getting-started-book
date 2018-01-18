@@ -59,4 +59,17 @@ public class MockitoExamples {
 		verify(mock, times(2)).add("Hello");
 		verify(mock, never()).add("World");
 	}
+
+	@Test
+	public void 部分的なモックオブジェクト() throws Exception {
+		List<String> list = new java.util.LinkedList<String>();
+		List<String> spy = spy(list);
+		doReturn("Mockito").when(spy).get(1);
+		spy.add("Hello");
+		spy.add("World");
+		verify(spy).add("Hello");
+		verify(spy).add("World");
+		assertThat(spy.get(0), is("Hello"));
+		assertThat(spy.get(1), is("Mockito"));
+	}
 }
